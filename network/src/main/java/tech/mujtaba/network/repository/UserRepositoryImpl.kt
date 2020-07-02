@@ -54,5 +54,5 @@ internal class UserRepositoryImpl @Inject constructor(private val service: Netwo
 
     private fun mapToExternalUser(internalUser: UserResponse): User = User(internalUser.id, internalUser.name, internalUser.email, internalUser.phone)
 
-    private fun mapToExternalAlbum(internalAlbum: AlbumResponse): UserAlbum = UserAlbum(internalAlbum.albumId, internalAlbum.title, internalAlbum.url, internalAlbum.thumbnailUrl)
+    private fun mapToExternalAlbum(internalAlbum: AlbumResponse): UserAlbum = UserAlbum(internalAlbum.albumId, internalAlbum.id, internalAlbum.title, internalAlbum.url, internalAlbum.thumbnailUrl)
 }

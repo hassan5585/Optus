@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userListFragment">
+
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="tech.mujtaba.optus.feature.userlist.UserListFragment"
+        android:label="UserListFragment">
+        <action
+            android:id="@+id/action_userListFragment_to_albumListFragment"
+            app:destination="@id/albumListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumListFragment"
+        android:name="tech.mujtaba.optus.feature.picturelist.PictureListFragment"
+        android:label="AlbumListFragment">
+        <action
+            android:id="@+id/action_albumListFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailsFragment"
+        android:name="tech.mujtaba.optus.feature.picturedetails.PictureDetailsFragment"
+        android:label="AlbumDetailsFragment">
+        <argument
+            android:name="pictureId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

@@ -8,7 +8,7 @@ import tech.mujtaba.optus.OptusApp
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AndroidSupportInjectionModule::class, NetworkModule::class, ViewModelModule::class])
+@Component(modules = [AndroidSupportInjectionModule::class, NetworkModule::class, ViewModelModule::class, FragmentModule::class])
 interface AppComponent : AndroidInjector<OptusApp> {
     @Component.Factory
     interface Builder : AndroidInjector.Factory<OptusApp>
