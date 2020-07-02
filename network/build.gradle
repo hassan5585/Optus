@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: "../dependencies.gradle"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$ver.kotlinVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$ver.dagger"
+    implementation "com.google.dagger:dagger-android-support:$ver.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$ver.dagger"
+    kapt "com.google.dagger:dagger-compiler:$ver.dagger"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$ver.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$ver.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$ver.retrofit"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$ver.rxJava"
+}

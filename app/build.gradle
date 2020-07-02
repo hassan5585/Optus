@@ -30,6 +30,7 @@ android {
 }
 
 dependencies {
+    implementation project(":network")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$ver.kotlinVersion"
     implementation "androidx.appcompat:appcompat:$ver.appCompat"
 
