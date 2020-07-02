@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: "../dependencies.gradle"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "tech.mujtaba.optus"
+        minSdkVersion 21
+        targetSdkVersion 30
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$ver.kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$ver.appCompat"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$ver.dagger"
+    implementation "com.google.dagger:dagger-android-support:$ver.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$ver.dagger"
+    kapt "com.google.dagger:dagger-compiler:$ver.dagger"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$ver.glide"
+    kapt "com.github.bumptech.glide:compiler:$ver.glide"
+
+    // Nav Components
+    implementation "androidx.navigation:navigation-fragment-ktx:$ver.navComponents"
+    implementation "androidx.navigation:navigation-ui-ktx:$ver.navComponents"
+
+    // ConstraintLayout
+    implementation "androidx.constraintlayout:constraintlayout:$ver.constraintLayout"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$ver.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$ver.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$ver.retrofit"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$ver.rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$ver.rxAndroid"
+
+    // Recyclerview
+    implementation "androidx.recyclerview:recyclerview:$ver.recyclerView"
+
+    // Test Dependencies
+    testImplementation "junit:junit:$ver.junit"
+    testImplementation "androidx.arch.core:core-testing:$ver.archTesting"
+    testImplementation "org.hamcrest:hamcrest-all:$ver.hamcrest"
+}
