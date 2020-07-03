@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/userListFragment"
         android:name="tech.mujtaba.optus.feature.userlist.UserListFragment"
-        android:label="UserListFragment">
+        android:label="User Info">
         <action
             android:id="@+id/action_userListFragment_to_albumListFragment"
             app:destination="@id/albumListFragment"
@@ -37,6 +37,9 @@
         android:label="AlbumDetailsFragment">
         <argument
             android:name="pictureId"
+            app:argType="integer" />
+        <argument
+            android:name="albumId"
             app:argType="integer" />
     </fragment>
 </navigation>

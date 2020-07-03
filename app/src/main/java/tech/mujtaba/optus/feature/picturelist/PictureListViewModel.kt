@@ -1,7 +1,7 @@
 package tech.mujtaba.optus.feature.picturelist
 
-import androidx.lifecycle.ViewModel
+import tech.mujtaba.optus.viewmodel.BaseViewModel
 import javax.inject.Inject
 
-class PictureListViewModel @Inject constructor(): ViewModel() {
+class PictureListViewModel @Inject constructor(): BaseViewModel() {
 }

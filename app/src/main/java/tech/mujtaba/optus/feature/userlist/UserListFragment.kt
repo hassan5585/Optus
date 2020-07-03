@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import dagger.android.support.DaggerFragment
-import tech.mujtaba.optus.R
+import tech.mujtaba.network.model.external.User
+import tech.mujtaba.optus.databinding.FragmentUserListBinding
 import tech.mujtaba.optus.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
-class UserListFragment : DaggerFragment() {
+class UserListFragment : DaggerFragment(), IUserClickListener {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -18,6 +20,16 @@ class UserListFragment : DaggerFragment() {
     private val viewModel: UserListViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_user_list, container, false)
+        return FragmentUserListBinding.inflate(inflater, container, false).let {
+            it.viewModel = viewModel
+            it.clickListener = this
+            it.lifecycleOwner = viewLifecycleOwner
+            it.root
+        }
+    }
+
+    override fun onUserClicked(user: User) {
+        val action = UserListFragmentDirections.actionUserListFragmentToAlbumListFragment(user.id)
+        findNavController().navigate(action)
     }
 }
