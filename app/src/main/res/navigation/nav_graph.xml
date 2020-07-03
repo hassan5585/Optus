@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/albumListFragment"
         android:name="tech.mujtaba.optus.feature.picturelist.PictureListFragment"
-        android:label="AlbumListFragment">
+        android:label="Album ID: {userId}">
         <action
             android:id="@+id/action_albumListFragment_to_albumDetailsFragment"
             app:destination="@id/albumDetailsFragment"
@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/albumDetailsFragment"
         android:name="tech.mujtaba.optus.feature.picturedetails.PictureDetailsFragment"
-        android:label="AlbumDetailsFragment">
+        android:label="Album ID: {albumId} Photo ID: {pictureId}">
         <argument
             android:name="pictureId"
             app:argType="integer" />
