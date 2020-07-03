@@ -51,7 +51,10 @@ fun setPictureList(recyclerView: RecyclerView, pictureList: List<UserAlbum>?, pi
 }
 
 @BindingAdapter("imageUrl")
-fun setImage(imageView: AppCompatImageView, imageUrl: String) {
+fun setImage(imageView: AppCompatImageView, imageUrl: String?) {
+    if (imageUrl == null) {
+        return
+    }
     val options = RequestOptions()
             .placeholder(R.drawable.ic_photo_camera_24)
             .error(R.drawable.ic_photo_camera_24)
