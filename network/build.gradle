@@ -31,4 +31,10 @@ dependencies {
 
     //RxJava
     implementation "io.reactivex.rxjava2:rxjava:$ver.rxJava"
+
+    // Test Dependencies
+    testImplementation "junit:junit:$ver.junit"
+    testImplementation "org.mockito:mockito-core:$ver.mockito"
+    testImplementation "org.mockito:mockito-inline:$ver.mockito"
+    testImplementation "org.hamcrest:hamcrest-all:$ver.hamcrest"
 }

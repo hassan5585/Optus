@@ -68,5 +68,7 @@ dependencies {
     // Test Dependencies
     testImplementation "junit:junit:$ver.junit"
     testImplementation "androidx.arch.core:core-testing:$ver.archTesting"
+    testImplementation "org.mockito:mockito-core:$ver.mockito"
+    testImplementation "org.mockito:mockito-inline:$ver.mockito"
     testImplementation "org.hamcrest:hamcrest-all:$ver.hamcrest"
 }
